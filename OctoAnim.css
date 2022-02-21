@@ -11,7 +11,7 @@
 }
 
 .header { grid-area: header; }
-.main { grid-area: main; height: 80%; }
+.main { grid-area: main; }
 .footer { grid-area: footer; }
 
 
