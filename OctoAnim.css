@@ -1,0 +1,96 @@
+.layout {
+  width: 1366px;
+  height: 768px;
+  display: grid;
+  grid:
+    "header" auto
+    "main" 1fr
+    "footer" auto
+    / 1fr;
+  gap: 8px;
+}
+
+.header { grid-area: header; }
+.main { grid-area: main; height: 80%; }
+.footer { grid-area: footer; }
+
+
+@keyframes move_anim {
+  0%  {d: path("M 85,100 C 78,90 112,86 115,75 c 3,-11 -12,-16 -10,-25 2,-9 13,-20 23,-20 10,0 20,11 22,20 2,9 -12,15 -10,25 2,10 32,17 25,25 -7,8 -25,-20 -25,-20 0,0 24,24 15,30 C 146,116 135,85 135,85 c 0,0 18,27 10,30 C 137,118 135,95 135,95 c 0,0 9,24 0,25 -9,1 -7,-30 -7,-30 0,0 6,30 -3,30 -9,0 -5,-25 -5,-25 0,0 -1,28 -10,25 -9,-3 5,-30 5,-30 0,0 -11,32 -20,25 C 86,108 115,85 115,85 c 0,0 -23,25 -30,15 z");}
+  25% {d: path("m 85,85 c -2,-10 27,1 30,-10 3,-11 -12,-16 -10,-25 2,-9 13,-20 23,-20 10,0 20,11 22,20 2,9 -12,15 -10,25 2,10 32,-0 30,10 -2,10 -30,-5 -30,-5 0,0 29,6 25,15 -4,9 -30,-10 -30,-10 0,0 38,3 35,15 -3,12 -35,-5 -35,-5 0,0 16,18 20,10 4,-8 -27,-15 -27,-15 0,0 -19,21 -23,15 -4,-6 15,-10 15,-10 0,0 -22,13 -25,5 -3,-8 20,-10 20,-10 0,0 -24,8 -25,0 -1,-8 25,-5 25,-5 0,0 -28,10 -30,0 z")}
+  50% {d: path("M 85,105 C 77,95 112,86 115,75 c 3,-11 -12,-16 -10,-25 2,-9 13,-20 23,-20 10,0 20,11 22,20 2,9 -12,15 -10,25 2,10 32,17 25,25 -7,8 -25,-20 -25,-20 0,0 29,22 20,30 -9,8 -25,-25 -25,-25 0,0 23,25 15,30 -8,5 -15,-20 -15,-20 0,0 10,27 0,28 -10,1 -7,-33 -7,-33 0,0 7,33 -3,33 -10,0 -5,-28 -5,-28 0,0 4,26 -5,25 -9,-1 0,-30 0,-30 0,0 -4,35 -15,30 C 89,115 115,85 115,85 c 0,0 -22,30 -30,20 z");}
+  100%  {d: path("M 85,100 C 78,90 112,86 115,75 c 3,-11 -12,-16 -10,-25 2,-9 13,-20 23,-20 10,0 20,11 22,20 2,9 -12,15 -10,25 2,10 32,17 25,25 -7,8 -25,-20 -25,-20 0,0 24,24 15,30 C 146,116 135,85 135,85 c 0,0 18,27 10,30 C 137,118 135,95 135,95 c 0,0 9,24 0,25 -9,1 -7,-30 -7,-30 0,0 6,30 -3,30 -9,0 -5,-25 -5,-25 0,0 -1,28 -10,25 -9,-3 5,-30 5,-30 0,0 -11,32 -20,25 C 86,108 115,85 115,85 c 0,0 -23,25 -30,15 z");}
+}
+
+@keyframes rot_anim {
+  0%  {transform: rotate(0deg) translate(0,0);}
+  25%  {transform: rotate(5deg) translate(0,-20px);}
+  50%  {transform: rotate(0deg) translate(0,-25px);}
+  75%  {transform: rotate(-5deg) translate(0,-45px);}
+  100%  {transform: rotate(0deg) translate(0,-50px);}
+}
+
+@keyframes tra_anim {
+  0%  {transform: rotate(0deg) translate(0,0) ;}
+  50%  {transform: rotate(360deg) translate(0,-200px) ;}
+  100%  {transform: rotate(0deg) translate(0,0) ;}
+}
+
+
+#svg-box{
+   width:256px;
+   height:256px;
+}
+
+.octo{
+  transform-origin: 128px 64px;
+
+  animation-name: rot_anim; 
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  animation-direction: alternate;
+
+
+  fill:#de34eb;
+  stroke:#724175;
+  stroke-width:1px;
+  stroke-opacity: .25s
+}
+			
+.octo>path{
+
+  animation-name: move_anim; 
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+			
+}			
+			
+#svg-box{
+   position: absolute;
+   top: 30%;
+   left: 40%;
+	
+  animation-name: tra_anim; 
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+}
+
+body{
+  background-image:url(./OctoAnimBkg.webp); 
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+h1{
+  text-align:center;
+  -webkit-text-stroke: 1px blue;
+  -webkit-text-fill-color: #0000;  
+}
+
+.disclaimer{
+  text-align: center;
+  color: blue;
+  font-size: 0.5em;	
+}
