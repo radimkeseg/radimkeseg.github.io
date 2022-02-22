@@ -1,0 +1,61 @@
+<html>
+	<head>   
+		<title>page with menu</title>
+		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+		
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		 <script>
+		   const queryString = window.location.search;
+		   const urlParams = new URLSearchParams(queryString);
+		   const menu = urlParams.get('menu');
+		   console.log(`menu=${menu}`);
+		   
+		   const pageMap = {
+			  "main" : "sub/main.html",
+			  "retro" : "sub/retro.html",
+			  "calendar" : "sub/calendar.html",
+		   };
+			
+		   //on document ready	
+		   $(function(){ 	   	   
+			   if(menu !== null){
+				  try{
+					 $(`#menu_${menu}`).addClass("selected"); 	      
+				  }catch{
+					 console.log(`element with id='menu_${menu}' does not exist`);
+				  }
+			   }else{
+				  $("#menu_main").addClass("selected"); 
+			   }	 
+
+			   try{
+				  if(menu !== null){
+					$(`#myBody`).load( pageMap[`${menu}`] );
+				  }else{
+					$(`#myBody`).load( pageMap[`main`] );
+				  }
+				  $(`#myBody`).removeClass("transparent"); 	      
+				  $(`#myBody`).addClass("visible"); 	      			  
+			   }catch{
+				  console.log(`element with id='internal_frame' does not exist`);
+			   }
+		   });
+		 </script>
+	</head>
+
+	<body>
+
+		<nav>
+			<h1 class="villa">a page with menu</h1>
+			<div>
+				<ul>
+					<li id="menu_main"><a href="index.html?menu=main">main</a></li>
+					<li id="menu_retro"><a href="index.html?menu=retro">retro</a></li>
+					<li id="menu_calendar"><a href="index.html?menu=calendar">calendar</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div id="myBody" class="myBody transparent"></div>
+	</body>
+</html>

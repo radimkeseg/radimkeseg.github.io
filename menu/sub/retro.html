@@ -1,0 +1,35 @@
+<html>
+	<head>   
+		<title>Retro</title>
+		<style>
+			.layout {
+			  width: auto;
+			  display: grid;
+			  grid:
+				"header" auto
+				"main" 1fr
+				"footer" auto
+				/ 1fr;
+			  gap: 8px;
+			  justify-content: center;
+			}
+			.header { grid-area: header;  }
+			.main { grid-area: main;  }
+			.footer { grid-area: footer; text-align: }	
+		</style>
+	</head>
+
+	<body>
+	  <section class="layout">
+		<div class="header">
+			<span></span>
+		</div>
+		<div class="main">
+			<span>retro page test with layout from <a href="https://layout.bradwoods.io/customize" target="_blank">badwoods</a></span>
+		</div>
+		<div class="footer">
+			<span></span>
+		</div>
+	  </section>
+	</body>
+</html>

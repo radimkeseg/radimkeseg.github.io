@@ -1,0 +1,83 @@
+<html>
+	<head>   
+		<title>Calendar</title>
+		<style>
+			.layout {
+			  width: auto;
+			  display: grid;
+			  grid:
+				"header" auto
+				"main" 1fr
+				"footer" auto
+				/ 1fr;
+			  gap: 8px;
+			  justify-content: center;
+			}
+			.header { grid-area: header;  }
+			.main { grid-area: main;  }
+			.footer { grid-area: footer; text-align: }	
+			
+			.flex {
+			  display: flex;
+			  gap: 10px;
+			}
+			
+			.day{
+			  width:100px;
+			  text-align: center;
+			  padding: 20px;
+			  background-color: cornsilk;
+			  color: black;
+			  border-radius: 5px;
+			}
+			.weekend{
+			  background-color: crimson;
+			  color: white;
+			}
+			
+			.monday::before{
+			  content: "Monday";
+			}
+			.tuesday::before{
+			  content: "Tuesday";
+			}
+			.wednesday::before{
+			  content: "Wednesday";
+			}
+			.thursday::before{
+			  content: "Thursday";
+			}
+			.friday::before{
+			  content: "Friday";
+			}
+			.saturday::before{
+			  content: "Saturday";
+			}
+			.sunday::before{
+			  content: "Sunday";
+			}
+		</style>
+	</head>
+
+	<body>
+	  <section class="layout">
+		<div class="header">
+			<span></span>
+		</div>
+		<div class="main">
+  	      <section class="flex">
+		    <div class="day monday"></div>
+		    <div class="day tuesday"></div>
+		    <div class="day wednesday"></div>
+		    <div class="day thursday"></div>
+		    <div class="day friday"></div>
+		    <div class="day weekend saturday"></div>
+		    <div class="day weekend sunday"></div>
+  	      </section>
+		</div>
+		<div class="footer">
+			<span>retro page test with layout from <a href="https://layout.bradwoods.io/customize" target="_blank">badwoods</a></span>
+		</div>
+	  </section>
+	</body>
+</html>
