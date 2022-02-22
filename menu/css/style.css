@@ -20,6 +20,9 @@ nav ul li{
     display: inline-flex;
     padding-top: 2px;
     padding-bottom: 2px;
+
+    border-radius: 5px; 
+	border: 3px solid transparent;
 }
 
 nav ul li a{
@@ -27,19 +30,21 @@ nav ul li a{
     text-decoration: none;
     padding: 32px;
 
+    border-radius: 5px; 
+
     transition-duration: 1s;
 }
 
 nav ul li a:hover {
     background-color: #00404e;
 	border: 3px solid trasparent;
-    border-radius: 5px; 
 }
 
 nav ul li.selected{
     color: #def2f1;
+    text-decoration: none;
+    border-radius: 5px; 
 	border: 3px solid #def2f1;
-    border-radius: 5px;
 }
 
 .villa{
