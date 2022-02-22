@@ -1,0 +1,186 @@
+<html>
+<head>
+<title>view port animation</title>
+	<link type="text/css" rel="stylesheet" href="style.css"/>
+	<style>
+	.revealer {
+	  opacity: 0;
+	}	
+	@keyframes fade-in {
+		from {opacity: 0; transform: scale(0.5,0.5)}
+		to {opacity: 100;}
+	}
+	.fade-in-element {
+	  animation: fade-in 1.4s;
+	}
+	</style>
+	<script>
+		(function() {
+		  var elements;
+		  var windowHeight;
+
+		  function init() {
+			elements = document.querySelectorAll('.revealer');
+			windowHeight = window.innerHeight;
+		  }
+
+		  function checkPosition() {
+			for (var i = 0; i < elements.length; i++) {
+			  var element = elements[i];
+			  var positionFromTop = elements[i].getBoundingClientRect().top;
+			  if (positionFromTop + elements[i].clientHeight <= 0) {
+				element.classList.add('revealer');
+				element.classList.remove('fade-in-element');
+			  }
+			  else
+			  if (positionFromTop - windowHeight <= 0) {
+				element.classList.add('fade-in-element');
+				element.classList.remove('revealer');
+			  }
+			}
+		  }
+
+		  window.addEventListener('scroll', checkPosition);
+		  window.addEventListener('resize', init);
+		  
+		  function start(){
+		     init();
+			 checkPosition();
+		  }
+		  
+		  window.onload = start;
+		})();
+	</script>
+</head>
+<body>
+
+<div class="fullscreen">
+  <div class="text">
+    <div class="container">
+      <h2>Animate Elements If In Viewport ... Scroll Down</h2>
+    </div>
+  </div>
+</div>
+<div class="container container--circles">
+  <div class="circle c1 revealer">
+    <div class="circle__inner">
+      01
+    </div>
+  </div>
+  <div class="circle c2 revealer">
+    <div class="circle__inner">
+      02
+    </div>
+  </div>
+  <div class="circle c3 revealer">
+    <div class="circle__inner">
+      03
+    </div>
+  </div>
+  <div class="circle c4 revealer">
+    <div class="circle__inner">
+      04
+    </div>
+  </div>
+  <div class="circle c5 revealer">
+    <div class="circle__inner">
+      05
+    </div>
+  </div>
+  <div class="circle c6 revealer">
+    <div class="circle__inner">
+      06
+    </div>
+  </div>
+  <div class="circle c7 revealer">
+    <div class="circle__inner">
+      07
+    </div>
+  </div>
+  <div class="circle c8 revealer">
+    <div class="circle__inner">
+      08
+    </div>
+  </div>
+  <div class="circle c9 revealer">
+    <div class="circle__inner">
+      09
+    </div>
+  </div>
+  <div class="circle c10 revealer">
+    <div class="circle__inner">
+      10
+    </div>
+  </div>
+  <div class="circle c11 revealer">
+    <div class="circle__inner">
+      11
+    </div>
+  </div>
+  <div class="circle c12 revealer">
+    <div class="circle__inner">
+      12
+    </div>
+  </div>
+  <div class="circle c13 revealer">
+    <div class="circle__inner">
+      13
+    </div>
+  </div>
+  <div class="circle c14 revealer">
+    <div class="circle__inner">
+      14
+    </div>
+  </div>
+  <div class="circle c15 revealer">
+    <div class="circle__inner">
+      15
+    </div>
+  </div>
+  <div class="circle c16 revealer">
+    <div class="circle__inner">
+      16
+    </div>
+  </div>
+  <div class="circle c17 revealer">
+    <div class="circle__inner">
+      17
+    </div>
+  </div>
+  <div class="circle c18 revealer">
+    <div class="circle__inner">
+      18
+    </div>
+  </div>
+  <div class="circle c19 revealer">
+    <div class="circle__inner">
+      19
+    </div>
+  </div>
+  <div class="circle c20 revealer">
+    <div class="circle__inner">
+      20
+    </div>
+  </div>
+  <div class="circle c21 revealer">
+    <div class="circle__inner">
+      21
+    </div>
+  </div>
+  <div class="circle c22 revealer">
+    <div class="circle__inner">
+      22
+    </div>
+  </div>
+  <div class="circle c23 revealer">
+    <div class="circle__inner">
+      23
+    </div>
+  </div>
+  <div class="circle c24 revealer">
+    <div class="circle__inner">
+      24
+    </div>
+  </div>
+</div>
+</body></html>
